@@ -1,0 +1,17 @@
+body {
+    margin: 0 auto;
+    max-width: 1440px;
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.largeText {
+    font-size: 24px;
+}
+
+.boldText {
+    font-weight: bold;
+}
