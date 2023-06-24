@@ -25,6 +25,6 @@ Problems, problems
 
 As already said with Tip 1, getting the SSH keys to work between Github and the remote server was a bit of a hassle, but in the end, with help from the aforementioned websites, I got it...
 
-It finally helped when I got to the use of the .sh file to get the pipeline working from Github to the droplet remote server.
+It finally helped when I got to the use of the .sh file to get the pipeline working from Github to the droplet remote server. The info on how to use the file came from Google and was not too difficult.
 
-It took a long time getting the syntax right in the .yml files to get no more errors when running with the tests, but finally with a lot of trial and error I got it to work! Especially the specific errors you can see in the Actions itself are very helpful, so you can pinpoint where the problem lies and then go and solve it!
+It took a long time though getting the syntax right in the .yml files to get no more errors when running with the tests, but finally with a lot of trial and error I got it to work! Especially the specific errors you can see in the Actions itself are very helpful, so you can pinpoint where the problem lies and then go and solve it! It was from something simple like a syntax error to not being able to find the Github directory on the remote server, but finally it ran smoothly...
