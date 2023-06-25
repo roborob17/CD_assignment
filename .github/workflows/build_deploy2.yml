@@ -27,5 +27,4 @@ jobs:
             key: ${{secrets.SSH_PRIVATE_KEY}}
             username: ${{secrets.SSH_USERNAME}}
             port: ${{secrets.SSH_PORT}}
-      - name: run commands
-        run:  bash -s < commands.sh && exit
+            script:  bash -s commands.sh && exit
