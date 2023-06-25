@@ -30,7 +30,7 @@ jobs:
             script: |
                   cd /home/cd_assignment/CD_assignment
                   git init .
-                  git clone https://github.com/roborob17/CD_assignment.git
+                  git pull
                   systemctl restart CD_assignment
                   systemctl status CD_assignment
                   echo "Test"
