@@ -1,5 +1,7 @@
 name: build-and-deploy-on-droplet
-on: push
+on: 
+  push:
+    branches: [ master ] 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
@@ -15,12 +17,13 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest
+
   deploy-on-droplet:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
       - name: Copy repository to test dir on Ocean
-        uses: appleboy/ssh-action@v0.1.4
+        uses: appleboy/ssh-action@master
         with:
             host: ${{secrets.SSH_HOST}} 
             key: ${{secrets.SSH_KEY}}
