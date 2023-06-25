@@ -1,4 +1,4 @@
-cd /home/CD_assignment/
+cd /home/test/
 
 git add .
 git clone git@github.com:M https://github.com/roborob17/CD_assignment.git
