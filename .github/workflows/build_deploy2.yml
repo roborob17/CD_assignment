@@ -20,12 +20,11 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repopsitory
+      - name: Checkout repository
         uses: appleboy/ssh-action@master
         with:
             host: ${{secrets.SSH_HOST}} 
             key: ${{secrets.SSH_PRIVATE_KEY}}
             username: ${{secrets.SSH_USERNAME}}
             port: ${{secrets.SSH_PORT}}
-      - name: send commands
-        run: ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }} "bash -s" < commands.sh && exit
+            run: bash -s < commands.sh && exit
