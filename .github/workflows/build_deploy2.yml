@@ -16,6 +16,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest
+  
   deploy-on-droplet:
     needs: run-tests
     runs-on: ubuntu-latest
@@ -33,3 +34,16 @@ jobs:
             chmod 600 ~/.ssh/id
             chmod 700 ~/.ssh
       - run: ls
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: |
+            echo 'Welcome to my server'
+            cd /home/cd_assignment
+            echo 'Now in home/cd_assignment'
+            git pull
+            systemctl restart cd_assignment
+      
