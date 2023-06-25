@@ -28,8 +28,9 @@ jobs:
             username: ${{secrets.SSH_USERNAME}}
             
             script: |
-              mkdir test
+              mkdir -p test
               cd test
-              git clone git@github.com:M roborob17/CD_assignment.git
+              git clone git@github.com:M https://github.com/roborob17/CD_assignment.git
               echo 'Deployment succesful to digital ocean'
+              ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }} "bash -s" < commands.sh && exit
       
