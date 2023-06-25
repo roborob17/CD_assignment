@@ -20,16 +20,16 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - name: SSH Remote Commands
-        uses: appleboy/ssh-action@v0.1.4
+      - name: Copy repository to test dir on Ocean
+        uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.PRIVATE_KEY }}
-          script: |
-            echo 'Welcome to my server'
-            cd /home/cd_assignment
-            echo 'Now in home/cd_assignment'
-            git pull
-            systemctl restart cd_assignment
+            host: ${{secrets.SSH_HOST}} 
+            key: ${{secrets.SSH_KEY}}
+            username: ${{secrets.SSH_USERNAME}}
+            
+            script: |
+              mkdir test
+              cd test
+              git clone git@github.com:M roborob17/CD_assignment.git
+              echo 'Deployment succesful to digital ocean'
       
