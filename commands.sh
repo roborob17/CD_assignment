@@ -1,4 +1,4 @@
-cd /CD_assignment/
+cd ~/CD_assignment/
 git add .
 git commit -m 'droplet pull'
 git pull
