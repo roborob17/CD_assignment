@@ -19,7 +19,7 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy NodeJS app
+      - name: Copy repository to test dir on Ocean
         uses: appleboy/ssh-action@v0.1.4
         with:
             host: ${{secrets.SSH_HOST}} 
